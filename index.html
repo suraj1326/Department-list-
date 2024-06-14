@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments Dropdown</title>
+    <style>
+        /* CSS styles for the dropdown */
+        .container {
+            text-align: center; /* Align content to center */
+            margin-top: 50px; /* Add top margin for spacing */
+        }
+
+        .dropdown {
+            width: 200px; /* Set the width of the dropdown */
+            padding: 10px; /* Add some padding */
+            border: 1px solid #ccc; /* Add a border */
+            border-radius: 5px; /* Add border radius */
+            background-color: #fff; /* Set background color */
+            display: inline-block; /* Display as inline block */
+        }
+
+        .dropdown select {
+            width: 100%; /* Set select width to fill the container */
+            border: none; /* Remove border */
+            outline: none; /* Remove outline */
+            background-color: transparent; /* Make background transparent */
+        }
+
+        .dropdown select:focus {
+            border-color: blue; /* Add focus style */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dropdown">
+            <select id="departments-list">
+                <!-- Options will be added dynamically here -->
+            </select>
+        </div>
+    </div>
+    
+    <script>
+        const arr = ['ECE', 'CSE', 'IT', 'EEE', 'MECH', 'CIVIL'];
+        const selectList = document.getElementById('departments-list');
+
+        arr.forEach(function(department) {
+            const option = document.createElement('option');
+            option.textContent = department;
+            selectList.appendChild(option);
+        });
+    </script>
+</body>
+</html>
